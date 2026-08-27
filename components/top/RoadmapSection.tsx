@@ -5,16 +5,16 @@ const roadmapImage = "/images/exceed-career/roadmap/career-roadmap-journey.png";
 
 export default function RoadmapSection() {
   return (
-    <section id="roadmap" className="bg-navy py-10 md:py-12 text-white overflow-hidden">
+    <section id="roadmap" className="bg-navy py-8 md:py-9 text-white overflow-hidden">
       <div className="wrap flex gap-4">
         <div className="w-[2px] bg-white/25 shrink-0 self-stretch" />
         <div>
-          <div className="flex flex-col text-light-blue mb-3 leading-tight">
+          <div className="flex flex-col text-light-blue mb-2 leading-tight">
             <span className="eyebrow text-[13px]">05</span>
             <span className="eyebrow text-[13px]">ROADMAP</span>
           </div>
 
-          <h2 className="font-extrabold text-[28px] md:text-[42px] leading-[1.3] mb-1 md:mb-2">
+          <h2 className="font-extrabold text-[28px] md:text-[42px] leading-[1.3] mb-0">
             なりたい自分には、
             <br />
             順番がある。
@@ -24,7 +24,7 @@ export default function RoadmapSection() {
       </div>
 
       {/* PC: full-bleed road illustration with a single compact step row beneath it */}
-      <div className="hidden md:block relative w-full max-w-[1800px] mx-auto px-8 md:-mt-2">
+      <div className="hidden md:block relative w-full max-w-[1800px] mx-auto px-8 md:-mt-6">
         <div className="relative w-full" style={{ aspectRatio: "1902 / 624" }}>
           <Image
             src={roadmapImage}
@@ -35,7 +35,7 @@ export default function RoadmapSection() {
           />
         </div>
 
-        <div className="flex items-start mt-3">
+        <div className="flex items-start mt-1">
           {roadmapSteps.map((step, i) => (
             <div key={step.label} className="flex items-start flex-1 min-w-0">
               <div className="min-w-0">

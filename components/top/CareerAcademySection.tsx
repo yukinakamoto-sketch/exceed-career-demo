@@ -34,6 +34,7 @@ export default function CareerAcademySection() {
                   src={article.image}
                   alt={article.title}
                   sizes="(min-width: 768px) 19vw, 80vw"
+                  objectPosition="center bottom"
                 />
               </div>
               <p className="mt-2 min-h-[45px] font-bold text-navy text-[14px] leading-[1.6] group-hover:text-accent transition-colors">

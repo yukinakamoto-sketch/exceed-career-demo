@@ -11,9 +11,9 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative bg-warm-white overflow-hidden md:min-h-[52vh]"
+      className="relative bg-warm-white overflow-hidden"
     >
-      <div className="wrap relative py-10 md:py-6 w-full">
+      <div className="wrap relative py-10 md:py-5 w-full">
         {/* PC scattered captions */}
         <div className="hidden md:block absolute inset-0 pointer-events-none">
           {scatterCopy.map((item) => (
@@ -61,7 +61,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="relative w-full max-w-[440px] mx-auto aspect-[774/769] md:mx-0 md:max-w-none md:w-[min(46vw,620px)] md:-mt-4">
+          <div className="relative w-full max-w-[440px] mx-auto aspect-[774/769] md:mx-0 md:max-w-none md:w-[min(50vw,760px)] md:-mt-4">
             <Illustration
               src="/images/exceed-career/hero/hero-career-exploration.png"
               alt="PCの前で未来を考える女性と、背後へ伸びる道のイラスト"

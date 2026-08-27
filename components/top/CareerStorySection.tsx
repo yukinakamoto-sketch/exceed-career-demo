@@ -3,7 +3,7 @@ import Illustration from "./Illustration";
 
 export default function CareerStorySection() {
   return (
-    <section id="story" className="bg-white py-12 md:py-14">
+    <section id="story" className="bg-white py-10 md:py-11">
       <div className="wrap">
         <div className="flex items-baseline gap-2 text-text-sub mb-3">
           <span className="eyebrow text-[13px]">06</span>
@@ -16,15 +16,15 @@ export default function CareerStorySection() {
           {careerStory.headline[1]}
         </h2>
 
-        <div className="grid md:grid-cols-[33%_1fr] gap-8 md:gap-8 md:items-start">
+        <div className="grid md:grid-cols-[29%_1fr] gap-8 md:gap-8 md:items-start">
           <div className="flex flex-col items-center md:items-start gap-4 md:gap-5">
             <div
-              className="relative w-[300px] md:w-[370px] aspect-[1107/1376]"
+              className="relative w-[300px] md:w-full md:max-w-[420px] aspect-[1107/1376]"
             >
               <Illustration
                 src={careerStory.image}
                 alt="採用担当として働く主人公の写真"
-                sizes="370px"
+                sizes="420px"
               />
             </div>
             <div>
@@ -53,7 +53,7 @@ export default function CareerStorySection() {
               </div>
             </div>
 
-            <p className="text-[13px] leading-[1.9] text-text-sub max-w-[520px]">
+            <p className="text-[13px] leading-[1.9] text-text-sub max-w-[680px]">
               {careerStory.quote}
             </p>
           </div>
