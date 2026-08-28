@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Illustration from "@/components/top/Illustration";
 import { futureDirections, type FutureDirection } from "@/data/careers";
 
 const RESULT_STORAGE_KEY = "career-map-result";
@@ -38,7 +39,7 @@ export default function CareerMapResultPage() {
 
   const handleReset = () => {
     sessionStorage.removeItem(RESULT_STORAGE_KEY);
-    router.push("/career-map");
+    router.push("/career-map/questions");
   };
 
   if (!directions) {
@@ -47,94 +48,66 @@ export default function CareerMapResultPage() {
 
   return (
     <section className="bg-white min-h-screen">
-      <div className="wrap py-14 md:py-20">
-        <span className="eyebrow text-accent mb-6 block">RESULT</span>
+      <div className="max-w-[1120px] mx-auto px-6 md:px-10 py-20 md:py-24">
+        <span className="eyebrow text-accent mb-8 md:mb-10 block">RESULT</span>
 
-        <h1 className="font-extrabold text-navy text-[32px] md:text-[48px] leading-[1.2] mb-4">
+        <h1 className="font-extrabold text-navy text-[32px] md:text-[48px] leading-[1.2] mb-6">
           あなたの未来は、
           <br />
           ひとつじゃない。
         </h1>
 
-        <p className="text-[14px] leading-[1.9] text-text-sub max-w-[520px] mb-14 md:mb-16">
+        <p className="text-[14px] md:text-[15px] leading-[1.9] text-text-sub max-w-[520px] mb-14 md:mb-16">
           今の回答から、
-          少し気になりそうな方向を並べました。
           <br />
-          仕事を決めるためではなく、
-          次に見る場所を見つけるためのキャリアマップです。
+          少し気になりそうな方向を3つ並べました。
         </p>
 
-        <div className="border-t border-border max-w-[720px]">
-          {directions.map((direction) => (
-            <div key={direction.id} className="py-10 md:py-12 border-b border-border">
+        <div className="border-t border-border max-w-[840px]">
+          {directions.map((direction, i) => (
+            <Link
+              key={direction.id}
+              href="/career-map/next"
+              className="group flex items-center gap-6 md:gap-10 py-8 md:py-10 border-b border-border"
+            >
               <span
-                className="block font-extrabold text-navy leading-none tracking-[-0.02em] mb-3"
-                style={{ fontSize: "clamp(28px, 4vw, 44px)" }}
+                className="font-extrabold text-navy leading-none tracking-[-0.02em] shrink-0 group-hover:text-accent transition-colors"
+                style={{ fontSize: "clamp(28px, 3.4vw, 40px)" }}
               >
-                {direction.number}
+                {String(i + 1).padStart(2, "0")}
               </span>
 
-              <p className="font-bold text-navy text-[20px] md:text-[26px] leading-[1.4] mb-3">
-                {direction.lines[0]}
-                <br />
-                {direction.lines[1]}
-              </p>
+              <div className="relative w-[72px] md:w-[92px] aspect-[6/5] shrink-0">
+                <Illustration
+                  src={direction.image}
+                  alt={direction.lines.join("")}
+                  sizes="92px"
+                  objectPosition="center bottom"
+                />
+              </div>
 
-              <p className="text-[12px] text-text-sub leading-[1.8] mb-4">
-                {direction.tags.join(" / ")}
-              </p>
+              <div className="min-w-0 flex-1">
+                <p className="font-bold text-navy text-[17px] md:text-[21px] leading-[1.4] group-hover:text-accent transition-colors">
+                  {direction.lines[0]}
+                  <br />
+                  {direction.lines[1]}
+                </p>
+                <p className="mt-2 text-[12px] text-text-sub leading-[1.7]">
+                  {direction.tags.join(" / ")}
+                </p>
+              </div>
 
-              <Link
-                href="/#career"
-                className="underline-swipe inline-block text-[14px] font-semibold text-navy"
-              >
-                この未来を見る →
-              </Link>
-            </div>
+              <span className="shrink-0 text-accent text-[18px] md:text-[20px]">
+                →
+              </span>
+            </Link>
           ))}
-        </div>
-
-        <div className="mt-16 md:mt-20 max-w-[720px]">
-          <span className="eyebrow text-text-sub mb-3 block">NEXT STEP</span>
-          <p className="text-[15px] font-semibold text-navy leading-[1.8] mb-8">
-            まだ決めなくていい。
-            <br />
-            気になるところから見てみよう。
-          </p>
-
-          <div className="flex flex-col gap-4 mb-10">
-            <Link
-              href="/#career"
-              className="underline-swipe inline-block self-start text-[14px] font-semibold text-navy"
-            >
-              求人を見る →
-            </Link>
-            <Link
-              href="/#academy"
-              className="underline-swipe inline-block self-start text-[14px] font-semibold text-navy"
-            >
-              仕事について学ぶ →
-            </Link>
-            <Link
-              href="/#story"
-              className="underline-swipe inline-block self-start text-[14px] font-semibold text-navy"
-            >
-              歩いた人を見る →
-            </Link>
-          </div>
-
-          <Link
-            href="/career-map/line"
-            className="underline-swipe inline-block text-[15px] font-semibold text-navy"
-          >
-            LINEにキャリアマップを保存する →
-          </Link>
         </div>
 
         <button
           type="button"
           onClick={handleReset}
-          className="mt-16 md:mt-20 text-[13px] font-semibold text-navy hover:text-accent transition-colors"
+          className="mt-14 md:mt-16 text-[14px] font-semibold text-navy hover:text-accent transition-colors"
         >
           もう一度考えてみる →
         </button>
