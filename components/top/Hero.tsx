@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section id="top" className="relative bg-warm-white overflow-hidden">
       <div className="wrap relative py-10 md:py-6 w-full">
-        <div className="relative grid gap-8 md:grid-cols-[58%_1fr] md:items-center md:gap-0">
+        <div className="relative grid gap-6 md:grid-cols-[58%_1fr] md:items-center md:gap-0">
           <div className="relative z-10 md:pl-2">
             <h1
               className="font-extrabold text-navy"

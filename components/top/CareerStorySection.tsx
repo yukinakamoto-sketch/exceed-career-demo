@@ -20,9 +20,9 @@ export default function CareerStorySection() {
           {careerStory.subheadline[1]}
         </p>
 
-        <div className="grid md:grid-cols-[38%_1fr] gap-8 md:gap-10 md:items-start">
+        <div className="grid gap-6 md:grid-cols-[38%_1fr] md:gap-10 md:items-start">
           <div
-            className="relative w-[220px] md:w-[58%] mx-auto md:mx-0 md:ml-auto aspect-[1107/1376]"
+            className="relative w-[170px] md:w-[58%] mx-auto md:mx-0 md:ml-auto aspect-[1107/1376]"
           >
             <Illustration
               src={careerStory.image}
@@ -31,7 +31,7 @@ export default function CareerStorySection() {
             />
           </div>
 
-          <div className="flex flex-col gap-6 md:gap-8">
+          <div className="flex flex-col gap-4 md:gap-8">
             <p className="top-label text-accent">{careerStory.name}</p>
 
             <div className="relative pt-4">

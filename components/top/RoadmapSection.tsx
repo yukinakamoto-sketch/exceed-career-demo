@@ -72,14 +72,17 @@ export default function RoadmapSection() {
         </div>
       </div>
 
-      {/* SP: cropped, larger road excerpt above a vertical stepper */}
-      <div className="md:hidden relative w-full h-[180px] mt-8 mb-8">
+      {/* SP: full road illustration, scaled down but never cropped */}
+      <div
+        className="md:hidden relative w-full mt-8 mb-8"
+        style={{ aspectRatio: "1902 / 624" }}
+      >
         <Image
           src={roadmapImage}
           alt="山頂へ向かって曲がりながら伸びていく道のイラスト"
           fill
           sizes="100vw"
-          style={{ objectFit: "cover", objectPosition: "left center" }}
+          style={{ objectFit: "contain" }}
         />
       </div>
 

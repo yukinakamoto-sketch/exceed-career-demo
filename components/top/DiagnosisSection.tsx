@@ -51,21 +51,30 @@ export default function DiagnosisSection() {
             これからのキャリアマップを考えます。
           </p>
 
+          {/* PC: CTA follows the body copy directly, as before */}
           <Link
             href="/career-map"
-            className="underline-swipe inline-block mt-6 text-[15px] font-semibold text-navy"
+            className="hidden md:inline-block underline-swipe mt-6 text-[15px] font-semibold text-navy"
           >
             キャリアマップをつくる →
           </Link>
         </div>
 
-        <div className="relative w-full md:ml-auto md:max-w-[760px] aspect-[1625/873]">
+        <div className="relative w-full max-w-[360px] mx-auto md:mx-0 md:max-w-none md:ml-auto aspect-[1625/873]">
           <Illustration
             src="/images/exceed-career/diagnosis/diagnosis-future-path.png"
             alt="分岐した道の先にいくつもの未来があるイラスト"
             sizes="(min-width: 768px) 50vw, 100vw"
           />
         </div>
+
+        {/* SP: heading -> body -> illustration -> CTA */}
+        <Link
+          href="/career-map"
+          className="md:hidden underline-swipe inline-block mt-2 text-[15px] font-semibold text-navy"
+        >
+          キャリアマップをつくる →
+        </Link>
       </div>
     </section>
   );
