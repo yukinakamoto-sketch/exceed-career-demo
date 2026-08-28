@@ -14,21 +14,17 @@ export default function LineSection() {
       <div className="wrap grid md:grid-cols-[1fr_auto_1fr] gap-8 md:gap-12 items-center">
         <div>
           <div className="flex items-baseline gap-2 text-text-sub mb-2">
-            <span className="eyebrow text-[13px]">09</span>
+            <span className="eyebrow text-[13px]">08</span>
             <span className="eyebrow text-[13px]">LINE</span>
           </div>
-          <p className="eyebrow text-text-sub mb-2">YOUR CAREER NAVI</p>
-
-          <h2 className="font-extrabold text-navy text-[26px] md:text-[34px] leading-[1.3] mb-4">
-            見つけた未来を、
-            <br />
-            持ち歩こう。
+          <h2 className="font-extrabold text-navy text-[32px] md:text-[48px] leading-[1.2] mb-4">
+            未来を持ち歩く
           </h2>
 
-          <p className="text-[13px] leading-[1.8] text-text-sub max-w-[360px] mb-5">
-            LINEでつながると、
+          <p className="text-[14px] leading-[1.8] text-text-sub max-w-[360px] mb-5">
+            今日決めなくていい。
             <br />
-            あなたのキャリア履歴がもっと便利に。
+            見つけた未来を、いつでも続きを考えられるように。
           </p>
 
           <ul className="flex flex-col gap-1.5 mb-5">

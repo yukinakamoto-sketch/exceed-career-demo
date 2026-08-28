@@ -1,33 +1,38 @@
-export type CareerField = {
+export type FutureDirection = {
   number: string;
-  title: string;
+  id: string;
+  lines: string[];
   tags: string[];
   image: string;
 };
 
-export const careerFields: CareerField[] = [
+export const futureDirections: FutureDirection[] = [
   {
     number: "01",
-    title: "eスポーツ・配信・クリエイティブ",
-    tags: ["配信", "大会", "SNS", "クリエイティブ"],
+    id: "creative",
+    lines: ["好きなことを", "企画や発信につなげる"],
+    tags: ["配信", "SNS", "クリエイティブ", "eスポーツ"],
     image: "/images/exceed-career/career/career-esports-creative.png",
   },
   {
     number: "02",
-    title: "人材・採用・キャリア支援",
+    id: "support-growth",
+    lines: ["人の成長や", "キャリアを支える"],
     tags: ["採用", "人材", "育成", "キャリア支援"],
     image: "/images/exceed-career/career/career-people-hr.png",
   },
   {
     number: "03",
-    title: "オフィス・管理部門専門職",
-    tags: ["人事", "労務", "経理", "総務", "広報"],
+    id: "office-expertise",
+    lines: ["仕事を支える", "専門性を身につける"],
+    tags: ["人事", "労務", "経理", "総務"],
     image: "/images/exceed-career/career/career-office-professional.png",
   },
   {
     number: "04",
-    title: "IT・Web・SNS",
-    tags: ["エンジニア", "Web制作", "SNS運用", "マーケティング"],
+    id: "digital-expertise",
+    lines: ["デジタル領域で", "専門性をつくる"],
+    tags: ["IT", "Web", "SNS", "マーケティング"],
     image: "/images/exceed-career/career/career-it-web-sns.png",
   },
 ];

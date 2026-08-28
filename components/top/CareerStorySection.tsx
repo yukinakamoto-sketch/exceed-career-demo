@@ -3,43 +3,40 @@ import Illustration from "./Illustration";
 
 export default function CareerStorySection() {
   return (
-    <section id="story" className="bg-white py-10 md:py-11">
+    <section id="story" className="bg-white py-12 md:py-14">
       <div className="wrap">
-        <div className="flex items-baseline gap-2 text-text-sub mb-3">
+        <div className="flex items-baseline gap-2 text-text-sub mb-2">
           <span className="eyebrow text-[13px]">06</span>
           <span className="eyebrow text-[13px]">CAREER STORY</span>
         </div>
 
-        <h2 className="font-extrabold text-navy text-[28px] md:text-[34px] leading-[1.3] mb-5 md:mb-6">
-          {careerStory.headline[0]}
-          <br className="md:hidden" />
-          {careerStory.headline[1]}
+        <h2 className="font-extrabold text-navy text-[32px] md:text-[48px] leading-[1.2] mb-7 md:mb-9">
+          歩いた人を見る
         </h2>
 
-        <div className="grid md:grid-cols-[29%_1fr] gap-8 md:gap-8 md:items-start">
-          <div className="flex flex-col items-center md:items-start gap-4 md:gap-5">
-            <div
-              className="relative w-[300px] md:w-full md:max-w-[420px] aspect-[1107/1376]"
-            >
-              <Illustration
-                src={careerStory.image}
-                alt="採用担当として働く主人公の写真"
-                sizes="420px"
-              />
-            </div>
-            <div>
-              <p className="eyebrow text-accent mb-1 text-center md:text-left">
-                {careerStory.name}
-              </p>
-              <p className="font-bold text-navy text-[18px] md:text-[20px] leading-[1.4] text-center md:text-left whitespace-nowrap">
-                {careerStory.subheadline[0]}
-                <br className="md:hidden" />
-                {careerStory.subheadline[1]}
-              </p>
-            </div>
+        <p
+          className="font-extrabold text-navy leading-[0.98] mb-8 md:mb-10 tracking-[-0.02em]"
+          style={{ fontSize: "clamp(25px, 4vw, 48px)" }}
+        >
+          {careerStory.subheadline[0]}
+          <br />
+          {careerStory.subheadline[1]}
+        </p>
+
+        <div className="grid md:grid-cols-[38%_1fr] gap-8 md:gap-10 md:items-start">
+          <div
+            className="relative w-[260px] md:w-[74%] mx-auto md:mx-0 md:ml-auto aspect-[1107/1376]"
+          >
+            <Illustration
+              src={careerStory.image}
+              alt="採用担当として働く主人公の写真"
+              sizes="(min-width: 768px) 38vw, 300px"
+            />
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-8 md:gap-14 md:pt-3">
+            <p className="eyebrow text-accent">{careerStory.name}</p>
+
             <div className="relative pt-4">
               <div className="absolute left-0 right-0 top-[8px] h-[1px] bg-border hidden md:block" />
               <div className="absolute left-[4px] top-[4px] bottom-[4px] w-[1px] bg-border md:hidden" />
@@ -53,7 +50,7 @@ export default function CareerStorySection() {
               </div>
             </div>
 
-            <p className="text-[13px] leading-[1.9] text-text-sub max-w-[680px]">
+            <p className="text-[14px] leading-[2.1] text-text-sub max-w-[680px]">
               {careerStory.quote}
             </p>
           </div>

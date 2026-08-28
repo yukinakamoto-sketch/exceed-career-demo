@@ -11,11 +11,14 @@ export default function CareerAcademySection() {
               <span className="eyebrow text-[13px]">07</span>
               <span className="eyebrow text-[13px]">CAREER ACADEMY</span>
             </div>
-            <h2 className="font-extrabold text-navy text-[26px] md:text-[36px] leading-[1.3]">
-              未来のために、
-              <br />
-              今から学べる。
+            <h2 className="font-extrabold text-navy text-[32px] md:text-[48px] leading-[1.2] mb-2">
+              必要なことを学ぶ
             </h2>
+            <p className="text-[14px] text-text-sub leading-[1.8]">
+              次のキャリアに必要なものを、
+              <br />
+              今から身につける。
+            </p>
           </div>
 
           <a
@@ -29,7 +32,7 @@ export default function CareerAcademySection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-6 md:gap-6">
           {academyArticles.map((article) => (
             <a key={article.title} href={article.href} className="group flex flex-col">
-              <div className="relative aspect-[4/3] w-[73%]">
+              <div className="relative aspect-[4/3] w-[88%]">
                 <Illustration
                   src={article.image}
                   alt={article.title}
@@ -37,7 +40,7 @@ export default function CareerAcademySection() {
                   objectPosition="center bottom"
                 />
               </div>
-              <p className="mt-2 min-h-[45px] font-bold text-navy text-[14px] leading-[1.6] group-hover:text-accent transition-colors">
+              <p className="mt-3 min-h-[48px] font-bold text-navy text-[15px] leading-[1.5] group-hover:text-accent transition-colors">
                 {article.title}
               </p>
               <p className="mt-2 text-[12px] font-semibold text-text-sub">

@@ -1,43 +1,62 @@
+"use client";
+
+import Link from "next/link";
 import Illustration from "./Illustration";
+import { useJourney } from "./JourneyContext";
 
 export default function DiagnosisSection() {
+  const { current, future } = useJourney();
+
   return (
     <section id="diagnosis" className="bg-white py-14 md:py-16">
       <div className="wrap grid md:grid-cols-2 gap-8 md:gap-12 items-center">
         <div>
           <div className="flex items-baseline gap-2 text-text-sub mb-4">
-            <span className="eyebrow text-[13px]">08</span>
+            <span className="eyebrow text-[13px]">05</span>
             <span className="eyebrow text-[13px]">DIAGNOSIS</span>
           </div>
 
-          <h2 className="font-extrabold text-navy text-[28px] md:text-[38px] leading-[1.3] mb-5">
-            まだ分からないなら、
-            <br />
-            一緒に探そう。
+          <h2 className="font-extrabold text-navy text-[32px] md:text-[48px] leading-[1.2] mb-5">
+            自分の道をつくる
           </h2>
 
+          {(current || future) && (
+            <div className="flex flex-col gap-1 mb-5 text-[13px] font-semibold text-text-sub">
+              {current && (
+                <p>
+                  <span className="text-accent">今：</span>
+                  {current.label}
+                </p>
+              )}
+              {future && (
+                <p>
+                  <span className="text-accent">未来：</span>
+                  {future.label}
+                </p>
+              )}
+            </div>
+          )}
+
+          <p className="text-[15px] font-semibold text-navy leading-[1.8] mb-4">
+            あなたの場合、
+            <br />
+            どんな順番で進めばいい？
+          </p>
+
           <p className="text-[14px] leading-[1.9] text-text-sub max-w-[440px]">
-            性格だけで仕事を決める診断ではありません。
+            思考・成長スタイルと
             <br />
+            興味のある未来から、
             <br />
-            あなたの
-            <br />
-            思考・成長スタイル
-            <br />
-            ×
-            <br />
-            興味のある未来
-            <br />
-            から、
             これからのキャリアマップを考えます。
           </p>
 
-          <a
-            href="#diagnosis"
+          <Link
+            href="/career-map"
             className="underline-swipe inline-block mt-6 text-[15px] font-semibold text-navy"
           >
             キャリアマップをつくる →
-          </a>
+          </Link>
         </div>
 
         <div className="relative w-full md:ml-auto md:max-w-[760px] aspect-[1625/873]">

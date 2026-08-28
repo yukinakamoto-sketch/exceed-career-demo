@@ -51,6 +51,8 @@
   --color-accent-soft: var(--accent-soft);
   --color-border: var(--border);
   --font-sans: var(--font-sans-jp), sans-serif;
+  --font-heading: var(--font-heading-jp), var(--font-sans-jp), sans-serif;
+  --font-mono: var(--font-label-mono), ui-monospace, monospace;
 }
 
 * {
@@ -68,6 +70,12 @@ body {
   font-family: var(--font-sans);
 }
 
+h1,
+h2 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+}
+
 .wrap {
   max-width: var(--max-width);
   margin-inline: auto;
@@ -75,10 +83,10 @@ body {
 }
 
 .eyebrow {
-  font-family: var(--font-mono, var(--font-sans));
+  font-family: var(--font-mono);
   font-size: 12px;
-  letter-spacing: 0.14em;
-  font-weight: 600;
+  letter-spacing: 0.18em;
+  font-weight: 500;
 }
 
 .underline-swipe {
@@ -93,4 +101,19 @@ body {
 
 .underline-swipe:hover {
   background-size: 100% 100%;
+}
+
+@keyframes step-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.step-enter {
+  animation: step-in 380ms ease-out;
 }

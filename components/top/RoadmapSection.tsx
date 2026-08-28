@@ -1,30 +1,45 @@
+"use client";
+
 import Image from "next/image";
 import { roadmapSteps } from "@/data/roadmap";
+import { useJourney } from "./JourneyContext";
 
 const roadmapImage = "/images/exceed-career/roadmap/career-roadmap-journey.png";
 
 export default function RoadmapSection() {
+  const { current, future } = useJourney();
+  const showJourneyIntro = Boolean(current && future);
+
   return (
-    <section id="roadmap" className="bg-navy py-8 md:py-9 text-white overflow-hidden">
+    <section id="roadmap" className="bg-navy py-10 md:py-12 text-white overflow-hidden">
       <div className="wrap flex gap-4">
         <div className="w-[2px] bg-white/25 shrink-0 self-stretch" />
         <div>
           <div className="flex flex-col text-light-blue mb-2 leading-tight">
-            <span className="eyebrow text-[13px]">05</span>
+            <span className="eyebrow text-[13px]">04</span>
             <span className="eyebrow text-[13px]">ROADMAP</span>
           </div>
 
-          <h2 className="font-extrabold text-[28px] md:text-[42px] leading-[1.3] mb-0">
-            なりたい自分には、
-            <br />
-            順番がある。
-            <span className="block h-[3px] w-[120px] bg-accent mt-2" />
+          <h2 className="font-extrabold text-[32px] md:text-[48px] leading-[1.2] mb-3">
+            道筋を知る
           </h2>
+
+          <p className="text-[14px] md:text-[15px] leading-[1.8] text-light-blue mb-2">
+            興味が見つかっても、
+            <br />
+            いきなりそこがスタートとは限らない。
+          </p>
+
+          {showJourneyIntro && (
+            <p className="text-[13px] font-semibold text-accent-soft">
+              あなたの現在地から、気になる未来まで。
+            </p>
+          )}
         </div>
       </div>
 
       {/* PC: full-bleed road illustration with a single compact step row beneath it */}
-      <div className="hidden md:block relative w-full max-w-[1800px] mx-auto px-8 md:-mt-6">
+      <div className="hidden md:block relative w-full max-w-[1800px] mx-auto px-8 md:mt-6">
         <div className="relative w-full" style={{ aspectRatio: "1902 / 624" }}>
           <Image
             src={roadmapImage}
@@ -58,7 +73,7 @@ export default function RoadmapSection() {
       </div>
 
       {/* SP: cropped, larger road excerpt above a vertical stepper */}
-      <div className="md:hidden relative w-full h-[180px] mb-8">
+      <div className="md:hidden relative w-full h-[180px] mt-8 mb-8">
         <Image
           src={roadmapImage}
           alt="山頂へ向かって曲がりながら伸びていく道のイラスト"

@@ -1,14 +1,14 @@
 import Header from "@/components/top/Header";
 import Hero from "@/components/top/Hero";
-import IntroSection from "@/components/top/IntroSection";
-import InterestSection from "@/components/top/InterestSection";
-import CareerSection from "@/components/top/CareerSection";
+import CurrentSection from "@/components/top/CurrentSection";
+import FutureSection from "@/components/top/FutureSection";
 import RoadmapSection from "@/components/top/RoadmapSection";
+import DiagnosisSection from "@/components/top/DiagnosisSection";
 import CareerStorySection from "@/components/top/CareerStorySection";
 import CareerAcademySection from "@/components/top/CareerAcademySection";
-import DiagnosisSection from "@/components/top/DiagnosisSection";
 import LineSection from "@/components/top/LineSection";
 import AboutFooter from "@/components/top/AboutFooter";
+import { JourneyProvider } from "@/components/top/JourneyContext";
 
 export default function Home() {
   return (
@@ -16,13 +16,14 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <IntroSection />
-        <InterestSection />
-        <CareerSection />
-        <RoadmapSection />
+        <JourneyProvider>
+          <CurrentSection />
+          <FutureSection />
+          <RoadmapSection />
+          <DiagnosisSection />
+        </JourneyProvider>
         <CareerStorySection />
         <CareerAcademySection />
-        <DiagnosisSection />
         <LineSection />
       </main>
       <AboutFooter />
