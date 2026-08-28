@@ -16,8 +16,8 @@ export default function RoadmapSection() {
         <div className="w-[2px] bg-white/25 shrink-0 self-stretch" />
         <div>
           <div className="flex flex-col text-light-blue mb-2 leading-tight">
-            <span className="eyebrow text-[13px]">04</span>
-            <span className="eyebrow text-[13px]">ROADMAP</span>
+            <span className="top-label text-[13px]">04</span>
+            <span className="top-label text-[13px]">ROADMAP</span>
           </div>
 
           <h2 className="font-extrabold text-[32px] md:text-[48px] leading-[1.2] mb-3">
@@ -56,7 +56,7 @@ export default function RoadmapSection() {
               <div className="min-w-0">
                 <div className="flex items-center gap-1.5">
                   <span className="block w-[7px] h-[7px] rounded-full bg-accent-soft shrink-0" />
-                  <p className="eyebrow text-accent-soft whitespace-nowrap">
+                  <p className="top-label text-accent-soft whitespace-nowrap">
                     {i + 1}. {step.label}
                   </p>
                 </div>
@@ -90,7 +90,7 @@ export default function RoadmapSection() {
             {roadmapSteps.map((step, i) => (
               <div key={step.label} className="relative">
                 <span className="absolute left-[-24px] top-[4px] w-[9px] h-[9px] rounded-full bg-accent-soft" />
-                <p className="eyebrow text-accent-soft mb-1">
+                <p className="top-label text-accent-soft mb-1">
                   {i + 1}. {step.label}
                 </p>
                 <p className="font-bold text-[15px] leading-[1.5]">{step.title}</p>

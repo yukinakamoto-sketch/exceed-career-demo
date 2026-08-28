@@ -89,6 +89,16 @@ h2 {
   font-weight: 500;
 }
 
+/* TOP page section labels / tags: same visual role as .eyebrow but
+   using the body sans font instead of a monospace face. Hierarchy
+   comes from size, weight, letter-spacing, color, and spacing only. */
+.top-label {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
 .underline-swipe {
   text-decoration: none;
   background-image: linear-gradient(var(--accent), var(--accent));

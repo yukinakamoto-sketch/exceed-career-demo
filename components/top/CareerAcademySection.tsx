@@ -8,8 +8,8 @@ export default function CareerAcademySection() {
         <div className="flex items-baseline justify-between mb-6 md:mb-8">
           <div>
             <div className="flex items-baseline gap-2 text-text-sub mb-3">
-              <span className="eyebrow text-[13px]">07</span>
-              <span className="eyebrow text-[13px]">CAREER ACADEMY</span>
+              <span className="top-label text-[13px]">07</span>
+              <span className="top-label text-[13px]">CAREER ACADEMY</span>
             </div>
             <h2 className="font-extrabold text-navy text-[32px] md:text-[48px] leading-[1.2] mb-2">
               必要なことを学ぶ

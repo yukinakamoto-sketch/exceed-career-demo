@@ -37,8 +37,8 @@ export default function CurrentSection() {
     <section id="current" className="bg-white py-14 md:py-16">
       <div className="wrap">
         <div className="flex items-baseline gap-2 text-text-sub mb-6">
-          <span className="eyebrow text-[13px]">02</span>
-          <span className="eyebrow text-[13px]">CURRENT</span>
+          <span className="top-label text-[13px]">02</span>
+          <span className="top-label text-[13px]">CURRENT</span>
         </div>
 
         <h2 className="font-extrabold text-navy text-[32px] md:text-[48px] leading-[1.2] mb-4">
@@ -62,7 +62,7 @@ export default function CurrentSection() {
                 aria-pressed={selected}
                 className="group relative w-full flex items-center gap-6 md:gap-10 py-6 md:py-7 border-b border-border text-left transition-colors overflow-hidden"
               >
-                <span className="eyebrow text-text-sub w-[28px] shrink-0">
+                <span className="top-label text-text-sub w-[28px] shrink-0">
                   0{i + 1}
                 </span>
 

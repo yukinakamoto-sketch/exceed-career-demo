@@ -11,8 +11,8 @@ export default function FutureSection() {
     <section id="career" className="bg-white py-14 md:py-16">
       <div className="wrap">
         <div className="flex items-baseline gap-2 text-text-sub mb-6">
-          <span className="eyebrow text-[13px]">03</span>
-          <span className="eyebrow text-[13px]">FUTURE</span>
+          <span className="top-label text-[13px]">03</span>
+          <span className="top-label text-[13px]">FUTURE</span>
         </div>
 
         <h2 className="font-extrabold text-navy text-[32px] md:text-[48px] leading-[1.2] mb-4">

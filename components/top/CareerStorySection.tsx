@@ -6,8 +6,8 @@ export default function CareerStorySection() {
     <section id="story" className="bg-white py-12 md:py-14">
       <div className="wrap">
         <div className="flex items-baseline gap-2 text-text-sub mb-2">
-          <span className="eyebrow text-[13px]">06</span>
-          <span className="eyebrow text-[13px]">CAREER STORY</span>
+          <span className="top-label text-[13px]">06</span>
+          <span className="top-label text-[13px]">CAREER STORY</span>
         </div>
 
         <h2 className="font-extrabold text-navy text-[32px] md:text-[48px] leading-[1.2] mb-7 md:mb-9">
@@ -35,7 +35,7 @@ export default function CareerStorySection() {
           </div>
 
           <div className="flex flex-col gap-8 md:gap-14 md:pt-3">
-            <p className="eyebrow text-accent">{careerStory.name}</p>
+            <p className="top-label text-accent">{careerStory.name}</p>
 
             <div className="relative pt-4">
               <div className="absolute left-0 right-0 top-[8px] h-[1px] bg-border hidden md:block" />

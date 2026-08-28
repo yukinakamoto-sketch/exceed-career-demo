@@ -12,8 +12,8 @@ export default function DiagnosisSection() {
       <div className="wrap grid md:grid-cols-2 gap-8 md:gap-12 items-center">
         <div>
           <div className="flex items-baseline gap-2 text-text-sub mb-4">
-            <span className="eyebrow text-[13px]">05</span>
-            <span className="eyebrow text-[13px]">DIAGNOSIS</span>
+            <span className="top-label text-[13px]">05</span>
+            <span className="top-label text-[13px]">DIAGNOSIS</span>
           </div>
 
           <h2 className="font-extrabold text-navy text-[32px] md:text-[48px] leading-[1.2] mb-5">

@@ -14,8 +14,8 @@ export default function LineSection() {
       <div className="wrap grid md:grid-cols-[1fr_auto_1fr] gap-8 md:gap-12 items-center">
         <div>
           <div className="flex items-baseline gap-2 text-text-sub mb-2">
-            <span className="eyebrow text-[13px]">08</span>
-            <span className="eyebrow text-[13px]">LINE</span>
+            <span className="top-label text-[13px]">08</span>
+            <span className="top-label text-[13px]">LINE</span>
           </div>
           <h2 className="font-extrabold text-navy text-[32px] md:text-[48px] leading-[1.2] mb-4">
             未来を持ち歩く
