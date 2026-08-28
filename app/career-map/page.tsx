@@ -8,29 +8,30 @@ export default function CareerMapStartPage() {
         <div className="grid gap-10 md:grid-cols-[46%_54%] md:items-center md:gap-8">
           <div>
             <span className="eyebrow text-text-sub mb-6 block">
-              01 CAREER MAP
+              キャリアマップ診断
             </span>
 
-            <h1 className="font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.2] mb-5 md:mb-6">
-              まだ分からなくていい。
+            <h1 className="font-extrabold text-navy text-[32px] md:text-[46px] leading-[1.3] mb-5 md:mb-6">
+              4つの質問から、
+              <br />
+              今の自分に近い未来を見つける。
             </h1>
 
             <p className="text-[14px] md:text-[15px] leading-[1.9] text-text-sub max-w-[400px] mb-6">
-              4つの質問から、
+              まだやりたい仕事が決まっていなくても大丈夫。
               <br />
-              今の自分に近い未来を見つけます。
+              興味や今の気持ちから、これからの方向を整理します。
             </p>
 
             <div className="flex items-center gap-4 mb-8">
-              <span className="eyebrow text-text-sub">01 MIN</span>
-              <span className="eyebrow text-text-sub">04 QUESTIONS</span>
+              <span className="eyebrow text-text-sub">約1分・全4問</span>
             </div>
 
             <Link
               href="/career-map/questions"
               className="underline-swipe inline-block text-[15px] font-semibold text-navy"
             >
-              キャリアマップをつくる →
+              診断をはじめる →
             </Link>
 
             <p className="mt-4 text-[12px] text-text-sub">
