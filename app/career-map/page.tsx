@@ -3,43 +3,46 @@ import Illustration from "@/components/top/Illustration";
 
 export default function CareerMapStartPage() {
   return (
-    <section className="bg-white min-h-screen">
-      <div className="max-w-[1120px] mx-auto px-6 md:px-10 py-20 md:py-28">
-        <span className="eyebrow text-text-sub mb-8 md:mb-10 block">
-          01 CAREER MAP
-        </span>
-
-        <div className="grid md:grid-cols-[1fr_420px] gap-12 md:gap-16 items-center">
+    <section className="bg-warm-white min-h-[100svh] flex items-center overflow-hidden">
+      <div className="wrap w-full py-14 md:py-10">
+        <div className="grid gap-10 md:grid-cols-[46%_54%] md:items-center md:gap-8">
           <div>
-            <h1 className="font-extrabold text-navy text-[36px] md:text-[56px] leading-[1.15] mb-6 md:mb-8">
-              未来を、
-              <br />
-              少しずつ
-              <br />
-              見つける。
+            <span className="eyebrow text-text-sub mb-6 block">
+              01 CAREER MAP
+            </span>
+
+            <h1 className="font-extrabold text-navy text-[36px] md:text-[52px] leading-[1.2] mb-5 md:mb-6">
+              まだ分からなくていい。
             </h1>
 
-            <p className="text-[14px] md:text-[15px] leading-[1.9] text-text-sub max-w-[420px] mb-10 md:mb-12">
-              まだ答えが決まっていなくても大丈夫。
+            <p className="text-[14px] md:text-[15px] leading-[1.9] text-text-sub max-w-[400px] mb-6">
+              4つの質問から、
               <br />
-              今の気持ちから、これからの方向を
-              <br />
-              探してみよう。
+              今の自分に近い未来を見つけます。
             </p>
+
+            <div className="flex items-center gap-4 mb-8">
+              <span className="eyebrow text-text-sub">01 MIN</span>
+              <span className="eyebrow text-text-sub">04 QUESTIONS</span>
+            </div>
 
             <Link
               href="/career-map/questions"
-              className="inline-block bg-accent text-white text-[15px] font-semibold px-8 py-4 hover:opacity-90 transition-opacity"
+              className="underline-swipe inline-block text-[15px] font-semibold text-navy"
             >
-              診断をはじめる →
+              キャリアマップをつくる →
             </Link>
+
+            <p className="mt-4 text-[12px] text-text-sub">
+              答えは、あとから変えても大丈夫です。
+            </p>
           </div>
 
-          <div className="relative w-full max-w-[360px] mx-auto aspect-[1625/873]">
+          <div className="relative w-full max-w-[780px] mx-auto md:mx-0 aspect-[1625/873]">
             <Illustration
               src="/images/exceed-career/diagnosis/diagnosis-future-path.png"
               alt="分岐した道の先にいくつもの未来があるイラスト"
-              sizes="360px"
+              sizes="(min-width: 768px) 54vw, 100vw"
             />
           </div>
         </div>
