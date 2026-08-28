@@ -127,3 +127,20 @@ h2 {
 .step-enter {
   animation: step-in 380ms ease-out;
 }
+
+/* Scroll/mount reveal used across TOP sections (see components/top/Reveal.tsx) */
+.reveal {
+  transition-property: opacity, transform;
+  transition-duration: 550ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .step-enter {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

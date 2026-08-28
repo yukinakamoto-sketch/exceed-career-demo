@@ -63,14 +63,21 @@ export default function CurrentSection() {
                   0{i + 1}
                 </span>
 
-                <span
-                  className={`font-extrabold leading-[1.3] text-[22px] md:text-[30px] transition-colors ${
-                    selected ? "text-accent" : "text-navy group-hover:text-accent"
-                  }`}
-                >
-                  {option.lines[0]}
-                  <br />
-                  {option.lines[1]}
+                <span className="min-w-0">
+                  <span
+                    className={`block font-extrabold leading-[1.3] text-[22px] md:text-[30px] transition-colors duration-[250ms] ${
+                      selected ? "text-accent" : "text-navy group-hover:text-accent"
+                    }`}
+                  >
+                    {option.lines[0]}
+                    <br />
+                    {option.lines[1]}
+                  </span>
+                  <span
+                    className={`block h-[2px] bg-accent mt-2 transition-all duration-[250ms] ease-out ${
+                      selected ? "w-[28px]" : "w-0 group-hover:w-[28px]"
+                    }`}
+                  />
                 </span>
 
                 {/* hover時のみ表示する小さな手描きイラスト */}
@@ -82,10 +89,10 @@ export default function CurrentSection() {
                 </div>
 
                 <span
-                  className={`ml-auto shrink-0 text-accent text-[20px] md:text-[24px] transition-opacity ${
+                  className={`ml-auto shrink-0 text-accent text-[20px] md:text-[24px] transition-all duration-[250ms] ${
                     selected
                       ? "opacity-100"
-                      : "opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100"
+                      : "opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 group-hover:translate-x-[5px] group-focus-visible:translate-x-[5px]"
                   }`}
                 >
                   →

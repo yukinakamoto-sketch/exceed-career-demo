@@ -1,4 +1,5 @@
 import Illustration from "./Illustration";
+import Reveal from "./Reveal";
 
 const savedItems = [
   "CAREER MAP",
@@ -34,19 +35,25 @@ export default function LineSection() {
 
           <a
             href="#line"
-            className="underline-swipe inline-block text-[15px] font-semibold text-navy"
+            className="group underline-swipe inline-block text-[15px] font-semibold text-navy"
           >
-            LINEにキャリアマップを保存する →
+            LINEにキャリアマップを保存する{" "}
+            <span className="inline-block transition-transform duration-[250ms] group-hover:translate-x-[4px]">
+              →
+            </span>
           </a>
         </div>
 
-        <div className="relative w-[220px] md:w-[280px] aspect-[830/1378] justify-self-center">
+        <Reveal
+          distance={12}
+          className="relative w-[220px] md:w-[280px] aspect-[830/1378] justify-self-center"
+        >
           <Illustration
             src="/images/exceed-career/line/line-career-map-phone.png"
             alt="MY CAREER MAPアプリ画面を表示するスマートフォン"
             sizes="260px"
           />
-        </div>
+        </Reveal>
 
         <div className="hidden md:flex flex-col gap-4 justify-self-end text-right">
           <a href="#about" className="text-[13px] font-semibold text-navy hover:text-accent">

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Illustration from "./Illustration";
+import Reveal from "./Reveal";
 import { useJourney } from "./JourneyContext";
 
 export default function DiagnosisSection() {
@@ -54,26 +55,36 @@ export default function DiagnosisSection() {
           {/* PC: CTA follows the body copy directly, as before */}
           <Link
             href="/career-map"
-            className="hidden md:inline-block underline-swipe mt-6 text-[15px] font-semibold text-navy"
+            className="group hidden md:inline-block underline-swipe mt-6 text-[15px] font-semibold text-navy"
           >
-            キャリアマップをつくる →
+            キャリアマップをつくる{" "}
+            <span className="inline-block transition-transform duration-[250ms] group-hover:translate-x-[4px]">
+              →
+            </span>
           </Link>
         </div>
 
-        <div className="relative w-full max-w-[360px] mx-auto md:mx-0 md:max-w-none md:ml-auto aspect-[1625/873]">
+        <Reveal
+          delay={60}
+          distance={12}
+          className="relative w-full max-w-[360px] mx-auto md:mx-0 md:max-w-none md:ml-auto aspect-[1625/873]"
+        >
           <Illustration
             src="/images/exceed-career/diagnosis/diagnosis-future-path.png"
             alt="分岐した道の先にいくつもの未来があるイラスト"
             sizes="(min-width: 768px) 50vw, 100vw"
           />
-        </div>
+        </Reveal>
 
         {/* SP: heading -> body -> illustration -> CTA */}
         <Link
           href="/career-map"
-          className="md:hidden underline-swipe inline-block mt-2 text-[15px] font-semibold text-navy"
+          className="group md:hidden underline-swipe inline-block mt-2 text-[15px] font-semibold text-navy"
         >
-          キャリアマップをつくる →
+          キャリアマップをつくる{" "}
+          <span className="inline-block transition-transform duration-[250ms] group-hover:translate-x-[4px]">
+            →
+          </span>
         </Link>
       </div>
     </section>

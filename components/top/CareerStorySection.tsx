@@ -1,5 +1,6 @@
 import { careerStory } from "@/data/story";
 import Illustration from "./Illustration";
+import Reveal from "./Reveal";
 
 export default function CareerStorySection() {
   return (
@@ -21,7 +22,8 @@ export default function CareerStorySection() {
         </p>
 
         <div className="grid gap-6 md:grid-cols-[38%_1fr] md:gap-10 md:items-start">
-          <div
+          <Reveal
+            distance={12}
             className="relative w-[170px] md:w-[58%] mx-auto md:mx-0 md:ml-auto aspect-[1107/1376]"
           >
             <Illustration
@@ -29,7 +31,7 @@ export default function CareerStorySection() {
               alt="採用担当として働く主人公の写真"
               sizes="(min-width: 768px) 30vw, 260px"
             />
-          </div>
+          </Reveal>
 
           <div className="flex flex-col gap-4 md:gap-8">
             <p className="top-label text-accent">{careerStory.name}</p>

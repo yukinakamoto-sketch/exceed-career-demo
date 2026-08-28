@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Reveal from "./Reveal";
 
 const aboutLinks = ["ABOUT", "CAREER", "JOB", "FAQ"];
 const footerNavLinks = [
@@ -43,7 +44,7 @@ export default function AboutFooter() {
       </div>
 
       <div className="wrap py-10 md:py-14">
-        <div className="relative w-full max-w-[1200px] aspect-[1660/412]">
+        <Reveal distance={0} className="relative w-full max-w-[1200px] aspect-[1660/412]">
           <Image
             src="/images/exceed-career/footer/footer-lettering.png"
             alt="FIND YOUR NEXT. WHAT'S NEXT?"
@@ -51,7 +52,7 @@ export default function AboutFooter() {
             sizes="(min-width: 768px) 62vw, 100vw"
             style={{ objectFit: "contain", objectPosition: "left center" }}
           />
-        </div>
+        </Reveal>
 
         <div className="mt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div className="flex flex-wrap items-center gap-3">

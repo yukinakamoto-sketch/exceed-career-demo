@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { roadmapSteps } from "@/data/roadmap";
 import { useJourney } from "./JourneyContext";
+import Reveal from "./Reveal";
 
 const roadmapImage = "/images/exceed-career/roadmap/career-roadmap-journey.png";
 
@@ -20,9 +21,9 @@ export default function RoadmapSection() {
             <span className="top-label text-[13px]">ROADMAP</span>
           </div>
 
-          <h2 className="font-extrabold text-[32px] md:text-[48px] leading-[1.2] mb-3">
+          <Reveal as="h2" delay={0} distance={14} className="font-extrabold text-[32px] md:text-[48px] leading-[1.2] mb-3">
             道筋を知る
-          </h2>
+          </Reveal>
 
           <p className="text-[14px] md:text-[15px] leading-[1.8] text-light-blue mb-2">
             興味が見つかっても、
@@ -40,7 +41,7 @@ export default function RoadmapSection() {
 
       {/* PC: full-bleed road illustration with a single compact step row beneath it */}
       <div className="hidden md:block relative w-full max-w-[1800px] mx-auto px-8 md:mt-6">
-        <div className="relative w-full" style={{ aspectRatio: "1902 / 624" }}>
+        <Reveal delay={90} distance={20} className="relative w-full" style={{ aspectRatio: "1902 / 624" }}>
           <Image
             src={roadmapImage}
             alt="山頂へ向かって曲がりながら伸びていく道のイラスト"
@@ -48,11 +49,16 @@ export default function RoadmapSection() {
             sizes="100vw"
             style={{ objectFit: "contain" }}
           />
-        </div>
+        </Reveal>
 
         <div className="flex items-start mt-1">
           {roadmapSteps.map((step, i) => (
-            <div key={step.label} className="flex items-start flex-1 min-w-0">
+            <Reveal
+              key={step.label}
+              delay={260 + i * 70}
+              distance={10}
+              className="flex items-start flex-1 min-w-0"
+            >
               <div className="min-w-0">
                 <div className="flex items-center gap-1.5">
                   <span className="block w-[7px] h-[7px] rounded-full bg-accent-soft shrink-0" />
@@ -67,13 +73,15 @@ export default function RoadmapSection() {
                   -----&gt;
                 </span>
               )}
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
 
       {/* SP: full road illustration, scaled down but never cropped */}
-      <div
+      <Reveal
+        delay={80}
+        distance={18}
         className="md:hidden relative w-full mt-8 mb-8"
         style={{ aspectRatio: "1902 / 624" }}
       >
@@ -84,20 +92,20 @@ export default function RoadmapSection() {
           sizes="100vw"
           style={{ objectFit: "contain" }}
         />
-      </div>
+      </Reveal>
 
       <div className="wrap">
         <div className="md:hidden relative pl-6">
           <div className="absolute left-[4px] top-[6px] bottom-[6px] w-[1px] bg-white/25" />
           <div className="flex flex-col gap-6">
             {roadmapSteps.map((step, i) => (
-              <div key={step.label} className="relative">
+              <Reveal key={step.label} delay={i * 60} distance={10} className="relative">
                 <span className="absolute left-[-24px] top-[4px] w-[9px] h-[9px] rounded-full bg-accent-soft" />
                 <p className="top-label text-accent-soft mb-1">
                   {i + 1}. {step.label}
                 </p>
                 <p className="font-bold text-[15px] leading-[1.5]">{step.title}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { academyArticles } from "@/data/academy";
 import Illustration from "./Illustration";
+import Reveal from "./Reveal";
 
 export default function CareerAcademySection() {
   return (
@@ -27,26 +28,28 @@ export default function CareerAcademySection() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-6 md:gap-6">
-          {academyArticles.map((article) => (
-            <a key={article.title} href={article.href} className="group flex flex-col">
-              <div className="relative aspect-[4/3] w-[88%]">
-                <Illustration
-                  src={article.image}
-                  alt={article.title}
-                  sizes="(min-width: 768px) 19vw, 80vw"
-                  objectPosition="center bottom"
-                />
-              </div>
-              <p className="mt-3 min-h-[48px] font-bold text-navy text-[15px] leading-[1.5] group-hover:text-accent transition-colors">
-                {article.title}
-              </p>
-              <p className="mt-2 text-[12px] font-semibold text-text-sub group-hover:text-accent transition-colors">
-                READ MORE{" "}
-                <span className="inline-block transition-transform group-hover:translate-x-[3px]">
-                  →
-                </span>
-              </p>
-            </a>
+          {academyArticles.map((article, i) => (
+            <Reveal key={article.title} delay={i * 50} distance={12} className="w-full">
+              <a href={article.href} className="group w-full flex flex-col">
+                <div className="relative aspect-[4/3] w-[88%] transition-transform duration-[250ms] ease-out group-hover:-translate-y-[3px]">
+                  <Illustration
+                    src={article.image}
+                    alt={article.title}
+                    sizes="(min-width: 768px) 19vw, 80vw"
+                    objectPosition="center bottom"
+                  />
+                </div>
+                <p className="mt-3 min-h-[48px] font-bold text-navy text-[15px] leading-[1.5] group-hover:text-accent transition-colors">
+                  {article.title}
+                </p>
+                <p className="mt-2 text-[12px] font-semibold text-text-sub group-hover:text-accent transition-colors">
+                  READ MORE{" "}
+                  <span className="inline-block transition-transform duration-[250ms] group-hover:translate-x-[5px]">
+                    →
+                  </span>
+                </p>
+              </a>
+            </Reveal>
           ))}
         </div>
       </div>
