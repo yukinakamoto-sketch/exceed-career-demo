@@ -8,16 +8,6 @@ import Illustration from "@/components/top/Illustration";
 
 const RESULT_STORAGE_KEY = "career-map-result";
 
-// Per-position sizing/offset so the four options read as an edited
-// magazine layout rather than a uniform 2x2 grid. Applies by option
-// index, independent of question content.
-const OPTION_LAYOUT = [
-  { imgW: 170, mt: "", row: false, text: "text-[22px] md:text-[26px]" },
-  { imgW: 106, mt: "md:mt-16", row: true, text: "text-[18px] md:text-[20px]" },
-  { imgW: 84, mt: "md:mt-10", row: false, text: "text-[17px] md:text-[19px]" },
-  { imgW: 176, mt: "md:-mt-2", row: false, text: "text-[20px] md:text-[24px]" },
-];
-
 function computeTopDirections(scoreTotals: Record<string, number>) {
   return [...futureDirections]
     .sort((a, b) => (scoreTotals[b.id] ?? 0) - (scoreTotals[a.id] ?? 0))
@@ -77,13 +67,13 @@ export default function CareerMapQuestionsPage() {
 
   return (
     <section className="bg-white min-h-screen">
-      <div className="max-w-[1240px] mx-auto px-6 md:px-10 py-14 md:py-16">
+      <div className="max-w-[1160px] mx-auto px-6 md:px-10 py-14 md:py-16">
         <div key={step} className="step-enter">
-          <span className="text-[13px] font-semibold text-accent tracking-[0.02em] mb-6 md:mb-8 block">
+          <span className="text-[13px] font-semibold text-accent tracking-[0.02em] mb-6 block">
             {step + 1} / {total}
           </span>
 
-          <h1 className="font-extrabold text-navy text-[30px] md:text-[44px] leading-[1.3] mb-12 md:mb-16 max-w-[720px]">
+          <h1 className="font-extrabold text-navy text-[30px] md:text-[44px] leading-[1.3] mb-9 md:mb-10">
             {question.question.map((line, i) => (
               <span key={i}>
                 {line}
@@ -92,80 +82,49 @@ export default function CareerMapQuestionsPage() {
             ))}
           </h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12 md:gap-y-10">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-x-10 gap-y-0">
             {question.options.map((option, i) => {
               const selected = answers[step] === option.key;
-              const layout = OPTION_LAYOUT[i];
-
-              const numberEl = (
-                <span
-                  className={`block text-[13px] font-semibold tracking-[0.02em] mb-3 transition-colors ${
-                    selected ? "text-accent" : "text-text-sub"
-                  }`}
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-              );
-
-              const textEl = (
-                <p
-                  className={`font-extrabold leading-[1.35] mb-3 transition-colors ${layout.text} ${
-                    selected ? "text-accent" : "text-navy group-hover:text-accent"
-                  }`}
-                >
-                  {option.lines.map((line, li) => (
-                    <span key={li}>
-                      {line}
-                      {li < option.lines.length - 1 && <br />}
-                    </span>
-                  ))}
-                </p>
-              );
-
-              const underlineEl = (
-                <span
-                  className={`block h-[2px] bg-accent mb-5 transition-all duration-200 ${
-                    selected ? "w-[36px] opacity-100" : "w-[22px] opacity-0 group-hover:w-[36px] group-hover:opacity-100"
-                  }`}
-                />
-              );
-
-              const imageEl = (
-                <div
-                  className="relative shrink-0 transition-transform duration-200 ease-out group-hover:translate-x-[3px]"
-                  style={{ width: `${layout.imgW}px`, aspectRatio: option.imageAspect }}
-                >
-                  <Illustration src={option.image} alt="" sizes={`${layout.imgW}px`} />
-                </div>
-              );
-
               return (
                 <button
                   key={option.key}
                   type="button"
                   onClick={() => handleSelect(option.key)}
                   aria-pressed={selected}
-                  className={`group text-left transition-colors ${layout.mt} ${
-                    selected ? "bg-pale-blue/20" : ""
-                  }`}
+                  className={`group text-left py-6 md:py-0 transition-colors ${
+                    i > 0 ? "border-t md:border-t-0 border-border" : ""
+                  } ${selected ? "bg-pale-blue/20 md:bg-transparent" : ""}`}
                 >
-                  {layout.row ? (
-                    <div className="flex items-center gap-6">
-                      <div className="min-w-0">
-                        {numberEl}
-                        {textEl}
-                        {underlineEl}
-                      </div>
-                      {imageEl}
-                    </div>
-                  ) : (
-                    <>
-                      {numberEl}
-                      {textEl}
-                      {underlineEl}
-                      {imageEl}
-                    </>
-                  )}
+                  <span
+                    className={`block text-[13px] font-semibold tracking-[0.02em] mb-2 transition-colors ${
+                      selected ? "text-accent" : "text-text-sub"
+                    }`}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+
+                  <p
+                    className={`font-extrabold leading-[1.35] text-[19px] md:text-[21px] mb-1 transition-colors ${
+                      selected ? "text-accent" : "text-navy group-hover:text-accent"
+                    }`}
+                  >
+                    {option.lines.map((line, li) => (
+                      <span key={li}>
+                        {line}
+                        {li < option.lines.length - 1 && <br />}
+                      </span>
+                    ))}
+                  </p>
+
+                  <span
+                    className={`block h-[2px] bg-accent mt-2 mb-4 transition-all duration-200 ${
+                      selected ? "w-[28px] opacity-100" : "w-[20px] opacity-0 group-hover:opacity-100"
+                    }`}
+                  />
+
+                  <div className="relative w-full aspect-square transition-transform duration-200 ease-out group-hover:-translate-y-[3px]">
+                    <Illustration src={option.image} alt="" sizes="(min-width: 768px) 25vw, 60vw" />
+                  </div>
                 </button>
               );
             })}
@@ -175,7 +134,7 @@ export default function CareerMapQuestionsPage() {
             type="button"
             onClick={handleBack}
             disabled={step === 0}
-            className={`mt-14 md:mt-16 text-[13px] font-semibold text-navy transition-opacity ${
+            className={`mt-12 md:mt-14 text-[13px] font-semibold text-navy transition-opacity ${
               step === 0 ? "opacity-0 pointer-events-none" : "opacity-100 hover:text-accent"
             }`}
           >
