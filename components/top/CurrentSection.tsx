@@ -36,16 +36,13 @@ export default function CurrentSection() {
   return (
     <section id="current" className="bg-white py-14 md:py-16">
       <div className="wrap">
-        <div className="flex items-baseline gap-2 text-text-sub mb-6">
-          <span className="top-label text-[13px]">02</span>
-          <span className="top-label text-[13px]">CURRENT</span>
-        </div>
+        <span className="top-label text-text-sub mb-3 block">02</span>
 
         <h2 className="font-extrabold text-navy text-[32px] md:text-[48px] leading-[1.2] mb-4">
           今の自分から始める
         </h2>
 
-        <p className="text-[15px] md:text-[16px] font-semibold text-navy mb-10 md:mb-12">
+        <p className="text-[15px] md:text-[16px] font-semibold text-navy mb-8 md:mb-10">
           今のあなたに近いのは？
         </p>
 

@@ -3,14 +3,11 @@ import Illustration from "./Illustration";
 
 export default function CareerAcademySection() {
   return (
-    <section id="academy" className="bg-warm-white py-14 md:py-16">
+    <section id="academy" className="bg-warm-white py-12 md:py-14">
       <div className="wrap">
         <div className="flex items-baseline justify-between mb-6 md:mb-8">
           <div>
-            <div className="flex items-baseline gap-2 text-text-sub mb-3">
-              <span className="top-label text-[13px]">07</span>
-              <span className="top-label text-[13px]">CAREER ACADEMY</span>
-            </div>
+            <span className="top-label text-text-sub mb-3 block">07</span>
             <h2 className="font-extrabold text-navy text-[32px] md:text-[48px] leading-[1.2] mb-2">
               必要なことを学ぶ
             </h2>
@@ -43,8 +40,11 @@ export default function CareerAcademySection() {
               <p className="mt-3 min-h-[48px] font-bold text-navy text-[15px] leading-[1.5] group-hover:text-accent transition-colors">
                 {article.title}
               </p>
-              <p className="mt-2 text-[12px] font-semibold text-text-sub">
-                READ MORE →
+              <p className="mt-2 text-[12px] font-semibold text-text-sub group-hover:text-accent transition-colors">
+                READ MORE{" "}
+                <span className="inline-block transition-transform group-hover:translate-x-[3px]">
+                  →
+                </span>
               </p>
             </a>
           ))}

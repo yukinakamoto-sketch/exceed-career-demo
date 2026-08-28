@@ -5,17 +5,14 @@ export default function CareerStorySection() {
   return (
     <section id="story" className="bg-white py-12 md:py-14">
       <div className="wrap">
-        <div className="flex items-baseline gap-2 text-text-sub mb-2">
-          <span className="top-label text-[13px]">06</span>
-          <span className="top-label text-[13px]">CAREER STORY</span>
-        </div>
+        <span className="top-label text-text-sub mb-3 block">06</span>
 
-        <h2 className="font-extrabold text-navy text-[32px] md:text-[48px] leading-[1.2] mb-7 md:mb-9">
+        <h2 className="font-extrabold text-navy text-[32px] md:text-[48px] leading-[1.2] mb-5 md:mb-6">
           歩いた人を見る
         </h2>
 
         <p
-          className="font-extrabold text-navy leading-[0.98] mb-8 md:mb-10 tracking-[-0.02em]"
+          className="font-extrabold text-navy leading-[0.98] mb-6 md:mb-8 tracking-[-0.02em]"
           style={{ fontSize: "clamp(25px, 4vw, 48px)" }}
         >
           {careerStory.subheadline[0]}
@@ -25,16 +22,16 @@ export default function CareerStorySection() {
 
         <div className="grid md:grid-cols-[38%_1fr] gap-8 md:gap-10 md:items-start">
           <div
-            className="relative w-[260px] md:w-[74%] mx-auto md:mx-0 md:ml-auto aspect-[1107/1376]"
+            className="relative w-[220px] md:w-[58%] mx-auto md:mx-0 md:ml-auto aspect-[1107/1376]"
           >
             <Illustration
               src={careerStory.image}
               alt="採用担当として働く主人公の写真"
-              sizes="(min-width: 768px) 38vw, 300px"
+              sizes="(min-width: 768px) 30vw, 260px"
             />
           </div>
 
-          <div className="flex flex-col gap-8 md:gap-14 md:pt-3">
+          <div className="flex flex-col gap-6 md:gap-8">
             <p className="top-label text-accent">{careerStory.name}</p>
 
             <div className="relative pt-4">
