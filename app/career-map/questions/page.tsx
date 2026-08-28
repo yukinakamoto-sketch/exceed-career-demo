@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { careerMapQuestions } from "@/data/careerMapQuestions";
 import { futureDirections } from "@/data/careers";
+import Illustration from "@/components/top/Illustration";
 
 const RESULT_STORAGE_KEY = "career-map-result";
 
@@ -66,15 +67,13 @@ export default function CareerMapQuestionsPage() {
 
   return (
     <section className="bg-white min-h-screen">
-      <div className="max-w-[1120px] mx-auto px-6 md:px-10 py-20 md:py-24">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-14 md:py-16">
         <div key={step} className="step-enter">
-          <div className="flex items-center justify-between mb-10 md:mb-14">
-            <span className="eyebrow text-accent">
-              {String(step + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
-            </span>
-          </div>
+          <span className="eyebrow text-accent mb-6 md:mb-8 block">
+            {String(step + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+          </span>
 
-          <h1 className="font-extrabold text-navy text-[28px] md:text-[40px] leading-[1.35] mb-10 md:mb-14 max-w-[640px]">
+          <h1 className="font-extrabold text-navy text-[30px] md:text-[44px] leading-[1.3] mb-10 md:mb-14 max-w-[720px]">
             {question.question.map((line, i) => (
               <span key={i}>
                 {line}
@@ -83,25 +82,29 @@ export default function CareerMapQuestionsPage() {
             ))}
           </h1>
 
-          <div className="border-t border-border max-w-[720px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 border-t border-border md:border-t-0">
             {question.options.map((option, i) => {
               const selected = answers[step] === option.key;
+              const isRightCol = i % 2 === 1;
+              const isBottomRow = i >= 2;
               return (
                 <button
                   key={option.key}
                   type="button"
                   onClick={() => handleSelect(option.key)}
                   aria-pressed={selected}
-                  className={`group w-full flex items-center gap-6 md:gap-10 py-6 md:py-7 border-b border-border text-left transition-colors ${
-                    selected ? "bg-pale-blue/40" : ""
-                  }`}
+                  className={`group text-left py-8 md:py-10 px-0 md:px-8 border-border transition-colors md:border-t-0 ${
+                    i > 0 ? "border-t" : ""
+                  } ${isBottomRow ? "md:border-t" : ""} ${
+                    isRightCol ? "md:border-l" : ""
+                  } ${selected ? "bg-pale-blue/30" : ""}`}
                 >
-                  <span className="eyebrow text-text-sub w-[28px] shrink-0">
+                  <span className="eyebrow text-text-sub block mb-3">
                     {String(i + 1).padStart(2, "0")}
                   </span>
 
-                  <span
-                    className={`font-extrabold leading-[1.3] text-[19px] md:text-[24px] transition-colors ${
+                  <p
+                    className={`font-extrabold leading-[1.35] text-[19px] md:text-[22px] mb-3 transition-colors ${
                       selected ? "text-accent" : "text-navy group-hover:text-accent"
                     }`}
                   >
@@ -111,15 +114,22 @@ export default function CareerMapQuestionsPage() {
                         {li < option.lines.length - 1 && <br />}
                       </span>
                     ))}
-                  </span>
+                  </p>
 
                   <span
-                    className={`ml-auto shrink-0 h-[2px] w-[24px] bg-accent transition-opacity ${
+                    className={`block h-[2px] w-[28px] bg-accent mb-5 transition-opacity ${
                       selected
                         ? "opacity-100"
                         : "opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100"
                     }`}
                   />
+
+                  <div
+                    className="relative w-[110px] md:w-[130px] transition-transform duration-300 ease-out group-hover:scale-[1.06]"
+                    style={{ aspectRatio: option.imageAspect }}
+                  >
+                    <Illustration src={option.image} alt="" sizes="130px" />
+                  </div>
                 </button>
               );
             })}
