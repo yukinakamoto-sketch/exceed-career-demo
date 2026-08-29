@@ -1,14 +1,44 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { navLinks } from "@/data/nav";
 
 export default function Header() {
+  const pathname = usePathname();
+  const isTopPage = pathname === "/";
   const [open, setOpen] = useState(false);
+  const [isOverHero, setIsOverHero] = useState(isTopPage);
+
+  useEffect(() => {
+    if (!isTopPage) {
+      setIsOverHero(false);
+      return;
+    }
+
+    const hero = document.getElementById("top");
+    if (!hero) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsOverHero(entry.isIntersecting),
+      { rootMargin: "-64px 0px 0px", threshold: 0 },
+    );
+
+    observer.observe(hero);
+    return () => observer.disconnect();
+  }, [isTopPage]);
+
+  const transparent = isTopPage && isOverHero && !open;
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-border/50">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
+        transparent
+          ? "border-transparent bg-transparent"
+          : "border-border/50 bg-white/95 backdrop-blur"
+      }`}
+    >
       <div className="wrap flex items-center justify-between h-[56px] md:h-[64px]">
         <Link href="#top" className="md:pl-2 shrink-0">
           <span className="text-[15px] md:text-[17px] font-extrabold tracking-[-0.01em] text-navy">

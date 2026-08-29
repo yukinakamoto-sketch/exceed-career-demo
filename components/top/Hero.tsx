@@ -3,8 +3,11 @@ import Reveal from "./Reveal";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative bg-warm-white overflow-hidden">
-      <div className="wrap relative py-10 md:py-6 w-full">
+    <section
+      id="top"
+      className="relative flex min-h-[100svh] items-center overflow-hidden bg-warm-white"
+    >
+      <div className="wrap relative w-full pb-6 pt-[72px] md:pb-4 md:pt-[76px]">
         <div className="relative grid gap-6 md:grid-cols-[58%_1fr] md:items-center md:gap-0">
           <div className="relative z-10 md:pl-2">
             <Reveal as="h1" delay={0} distance={18} className="font-extrabold text-navy" style={{
@@ -45,7 +48,7 @@ export default function Hero() {
 
           <div className="relative">
             <Reveal axis="x" delay={200} distance={18}>
-              <div className="relative -z-10 w-full max-w-[500px] mx-auto aspect-[774/769] md:mx-0 md:max-w-none md:w-[min(56vw,860px)] md:-ml-24 md:-mt-2 md:-translate-x-[22%]">
+              <div className="relative -z-10 mx-auto aspect-[774/769] w-full max-w-[500px] md:mx-0 md:-ml-24 md:-mt-2 md:w-[min(56vw,860px,calc(100svh-96px))] md:max-w-none md:-translate-x-[22%]">
                 <Illustration
                   src="/images/exceed-career/hero/hero-career-exploration.png"
                   alt="PCの前で未来を考える女性と、背後へ伸びる道のイラスト"
