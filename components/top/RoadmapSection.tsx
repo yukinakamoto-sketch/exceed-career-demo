@@ -22,7 +22,7 @@ export default function RoadmapSection() {
           </div>
 
           <Reveal as="h2" delay={0} distance={14} className="font-extrabold text-[32px] md:text-[48px] leading-[1.2] mb-3">
-            道筋を知る
+            進む
           </Reveal>
 
           <p className="text-[14px] md:text-[15px] leading-[1.8] text-light-blue mb-2">

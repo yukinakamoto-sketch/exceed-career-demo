@@ -11,14 +11,19 @@ export default function FutureSection() {
   return (
     <section id="career" className="bg-white py-12 md:py-14">
       <div className="wrap">
-        <span className="top-label text-text-sub mb-3 block">03</span>
+        <div className="flex flex-col text-text-sub mb-3 leading-tight">
+          <span className="top-label">03</span>
+          <span className="top-label">CAREER</span>
+        </div>
 
         <h2 className="font-extrabold text-navy text-[32px] md:text-[48px] leading-[1.2] mb-4">
-          未来を見つける
+          広がる
         </h2>
 
-        <p className="text-[15px] md:text-[16px] font-semibold text-navy mb-8 md:mb-10">
-          どんな未来が、少し気になる？
+        <p className="text-[14px] md:text-[15px] leading-[1.9] text-text-sub max-w-[520px] mb-8 md:mb-10">
+          あなたの「好き」や「興味」から、
+          <br />
+          経験と学びを積んだ先にある、未来の方向性を広げていこう。
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">

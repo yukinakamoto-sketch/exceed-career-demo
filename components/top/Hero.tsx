@@ -11,15 +11,13 @@ export default function Hero() {
         <div className="relative grid gap-6 md:grid-cols-[58%_1fr] md:items-center md:gap-0">
           <div className="relative z-10 md:pl-2">
             <Reveal as="h1" delay={0} distance={18} className="font-extrabold text-navy" style={{
-                fontSize: "clamp(60px, 11.5vw, 150px)",
-                lineHeight: 0.94,
-                letterSpacing: "-0.045em",
+                fontSize: "clamp(28px, 4.2vw, 68px)",
+                lineHeight: 1.3,
+                letterSpacing: "-0.03em",
               }}>
-              この先、
+              今できる仕事だけで、
               <br />
-              何に
-              <br />
-              なろう。
+              未来を決めなくていい。
             </Reveal>
 
             <Reveal
@@ -28,20 +26,23 @@ export default function Hero() {
               distance={16}
               className="mt-5 md:mt-6 text-[14px] md:text-[15px] leading-[1.8] text-text-sub max-w-[420px]"
             >
-              まだ、やりたい仕事が決まっていなくてもいい。
+              今の自分を知り、学び、経験を積みながら、
               <br />
-              <br />
-              好きなこと、得意なこと、気になる未来。
-              <br />
-              そこから、自分のキャリアを探していこう。
+              理想のキャリアへつながる道を、一緒に描いていこう。
             </Reveal>
 
-            <Reveal as="div" delay={140} distance={14}>
+            <Reveal as="div" delay={140} distance={14} className="flex flex-col items-start gap-4 mt-6">
               <a
-                href="#current"
-                className="underline-swipe inline-block mt-6 text-[15px] font-semibold text-navy"
+                href="#diagnosis"
+                className="inline-block bg-navy text-white text-[14px] md:text-[15px] font-semibold px-6 py-3.5"
               >
-                自分の未来を探してみる →
+                キャリアマップ診断を始める →
+              </a>
+              <a
+                href="#career"
+                className="underline-swipe inline-block text-[14px] font-semibold text-navy"
+              >
+                4つの未来を見る →
               </a>
             </Reveal>
           </div>

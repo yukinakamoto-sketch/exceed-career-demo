@@ -12,10 +12,7 @@ export default function Header() {
   const [isOverHero, setIsOverHero] = useState(isTopPage);
 
   useEffect(() => {
-    if (!isTopPage) {
-      setIsOverHero(false);
-      return;
-    }
+    if (!isTopPage) return;
 
     const hero = document.getElementById("top");
     if (!hero) return;
@@ -57,10 +54,10 @@ export default function Header() {
             </Link>
           ))}
           <Link
-            href="#career"
+            href="#diagnosis"
             className="group bg-navy text-white text-[12px] font-medium tracking-[0.02em] px-5 py-2.5 whitespace-nowrap"
           >
-            キャリアを探す{" "}
+            キャリアマップ診断{" "}
             <span className="inline-block transition-transform duration-[250ms] group-hover:translate-x-[4px]">
               →
             </span>
@@ -93,11 +90,11 @@ export default function Header() {
               </Link>
             ))}
             <Link
-              href="#career"
+              href="#diagnosis"
               onClick={() => setOpen(false)}
               className="bg-navy text-white text-[13px] font-semibold text-center px-6 py-3"
             >
-              キャリアを探す →
+              キャリアマップ診断 →
             </Link>
           </nav>
         </div>

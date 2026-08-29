@@ -12,13 +12,13 @@ export default function DiagnosisSection() {
     <section id="diagnosis" className="bg-white py-14 md:py-16">
       <div className="wrap grid md:grid-cols-2 gap-8 md:gap-12 items-center">
         <div>
-          <div className="flex items-baseline gap-2 text-text-sub mb-4">
-            <span className="top-label text-[13px]">05</span>
-            <span className="top-label text-[13px]">DIAGNOSIS</span>
+          <div className="flex flex-col text-text-sub mb-4 leading-tight">
+            <span className="top-label">05</span>
+            <span className="top-label">DIAGNOSIS</span>
           </div>
 
           <h2 className="font-extrabold text-navy text-[32px] md:text-[48px] leading-[1.2] mb-5">
-            自分の道をつくる
+            探す
           </h2>
 
           {(current || future) && (
@@ -38,18 +38,25 @@ export default function DiagnosisSection() {
             </div>
           )}
 
-          <p className="text-[15px] font-semibold text-navy leading-[1.8] mb-4">
+          <p className="text-[15px] font-semibold text-navy leading-[1.8] mb-5">
             あなたの場合、
             <br />
             どんな順番で進めばいい？
           </p>
 
-          <p className="text-[14px] leading-[1.9] text-text-sub max-w-[440px]">
-            思考・成長スタイルと
+          <div className="flex flex-col gap-1.5 text-[13px] font-semibold text-navy mb-5">
+            <span>思考・働き方・成長スタイル</span>
+            <span className="text-text-sub">×</span>
+            <span>本人が望む未来</span>
+            <span className="text-text-sub">↓</span>
+            <span className="text-accent">おすすめキャリアマップ</span>
+          </div>
+
+          <p className="text-[14px] leading-[1.9] text-text-sub max-w-[440px] mb-2">
+            職種を一つに決めつける診断ではありません。
             <br />
-            興味のある未来から、
-            <br />
-            これからのキャリアマップを考えます。
+            思考・成長スタイルと興味のある未来から、
+            これからのキャリアマップを一緒に考えます。
           </p>
 
           {/* PC: CTA follows the body copy directly, as before */}
@@ -57,7 +64,7 @@ export default function DiagnosisSection() {
             href="/career-map"
             className="group hidden md:inline-block underline-swipe mt-6 text-[15px] font-semibold text-navy"
           >
-            キャリアマップをつくる{" "}
+            キャリアマップ診断を始める{" "}
             <span className="inline-block transition-transform duration-[250ms] group-hover:translate-x-[4px]">
               →
             </span>
@@ -81,7 +88,7 @@ export default function DiagnosisSection() {
           href="/career-map"
           className="group md:hidden underline-swipe inline-block mt-2 text-[15px] font-semibold text-navy"
         >
-          キャリアマップをつくる{" "}
+          キャリアマップ診断を始める{" "}
           <span className="inline-block transition-transform duration-[250ms] group-hover:translate-x-[4px]">
             →
           </span>

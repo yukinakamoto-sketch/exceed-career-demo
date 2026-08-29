@@ -6,11 +6,19 @@ export default function CareerStorySection() {
   return (
     <section id="story" className="bg-white py-12 md:py-14">
       <div className="wrap">
-        <span className="top-label text-text-sub mb-3 block">06</span>
+        <div className="flex flex-col text-text-sub mb-3 leading-tight">
+          <span className="top-label">07</span>
+          <span className="top-label">CAREER STORY</span>
+        </div>
 
         <h2 className="font-extrabold text-navy text-[32px] md:text-[48px] leading-[1.2] mb-5 md:mb-6">
-          歩いた人を見る
+          変わる
         </h2>
+
+        <p className="text-[15px] md:text-[16px] font-semibold text-navy mb-5 md:mb-6">
+          {careerStory.headline[0]}
+          {careerStory.headline[1]}
+        </p>
 
         <p
           className="font-extrabold text-navy leading-[0.98] mb-6 md:mb-8 tracking-[-0.02em]"

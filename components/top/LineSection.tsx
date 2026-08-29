@@ -2,30 +2,37 @@ import Illustration from "./Illustration";
 import Reveal from "./Reveal";
 
 const savedItems = [
-  "CAREER MAP",
-  "ACADEMY",
-  "CAREER STORY",
-  "JOB",
-  "CAREER CONSULTATION",
+  "診断結果",
+  "思考・成長スタイル",
+  "キャリアマップ",
+  "Career Academy",
+  "Career Story",
+  "興味を持った求人",
+  "キャリア相談",
 ];
 
 export default function LineSection() {
   return (
     <section id="line" className="bg-pale-blue/40 py-14 md:py-16">
-      <div className="wrap grid md:grid-cols-[1fr_auto_1fr] gap-8 md:gap-12 items-center">
+      <div className="wrap grid md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-center">
         <div>
-          <span className="top-label text-text-sub mb-3 block">08</span>
+          <div className="flex flex-col text-text-sub mb-3 leading-tight">
+            <span className="top-label">09</span>
+            <span className="top-label">LINE</span>
+          </div>
+
           <h2 className="font-extrabold text-navy text-[32px] md:text-[48px] leading-[1.2] mb-4">
-            未来を持ち歩く
+            つながる
           </h2>
 
-          <p className="text-[14px] leading-[1.8] text-text-sub max-w-[360px] mb-5">
-            今日決めなくていい。
+          <p className="text-[14px] leading-[1.9] text-text-sub max-w-[420px] mb-5">
+            LINEは応募の窓口ではありません。
             <br />
-            見つけた未来を、いつでも続きを考えられるように。
+            あなただけの「個人キャリアナビ」として、
+            見つけた道をいつでも続きから考えられるように。
           </p>
 
-          <ul className="flex flex-col gap-1.5 mb-5">
+          <ul className="grid grid-cols-2 gap-x-6 gap-y-1.5 mb-6 max-w-[420px]">
             {savedItems.map((item) => (
               <li key={item} className="text-[13px] font-semibold text-navy">
                 ✓ {item}
@@ -35,12 +42,9 @@ export default function LineSection() {
 
           <a
             href="#line"
-            className="group underline-swipe inline-block text-[15px] font-semibold text-navy"
+            className="inline-block bg-[#06C755] text-white text-[14px] md:text-[15px] font-semibold px-6 py-3.5"
           >
-            LINEにキャリアマップを保存する{" "}
-            <span className="inline-block transition-transform duration-[250ms] group-hover:translate-x-[4px]">
-              →
-            </span>
+            LINEでキャリアナビを始める →
           </a>
         </div>
 
@@ -54,21 +58,6 @@ export default function LineSection() {
             sizes="260px"
           />
         </Reveal>
-
-        <div className="hidden md:flex flex-col gap-4 justify-self-end text-right">
-          <a href="#about" className="text-[13px] font-semibold text-navy hover:text-accent">
-            ABOUT →
-          </a>
-          <a href="#career" className="text-[13px] font-semibold text-navy hover:text-accent">
-            CAREER →
-          </a>
-          <a href="#career" className="text-[13px] font-semibold text-navy hover:text-accent">
-            JOB →
-          </a>
-          <a href="#about" className="text-[13px] font-semibold text-navy hover:text-accent">
-            FAQ →
-          </a>
-        </div>
       </div>
     </section>
   );
