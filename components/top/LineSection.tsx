@@ -14,7 +14,7 @@ const savedItems = [
 export default function LineSection() {
   return (
     <section id="line" className="bg-pale-blue/40 py-12 md:py-14">
-      <div className="wrap grid md:grid-cols-[1fr_auto] gap-8 md:gap-10 items-center">
+      <div className="wrap grid md:grid-cols-[1fr_auto] gap-8 md:gap-7 items-center">
         <div>
           <div className="flex flex-col text-text-sub mb-3 leading-tight">
             <span className="top-label">09</span>
@@ -32,9 +32,9 @@ export default function LineSection() {
             見つけた道をいつでも続きから考えられるように。
           </p>
 
-          <ul className="grid grid-cols-2 gap-x-6 gap-y-1 mb-6 max-w-[420px]">
+          <ul className="grid grid-cols-2 gap-x-6 gap-y-0.5 mb-6 max-w-[420px]">
             {savedItems.map((item) => (
-              <li key={item} className="text-[13px] font-semibold text-navy leading-[1.6]">
+              <li key={item} className="text-[13px] font-semibold text-navy leading-[1.5]">
                 ✓ {item}
               </li>
             ))}
@@ -50,7 +50,7 @@ export default function LineSection() {
 
         <Reveal
           distance={12}
-          className="relative w-[220px] md:w-[330px] aspect-[830/1378] justify-self-center"
+          className="relative w-[220px] md:w-[355px] aspect-[830/1378] justify-self-center"
         >
           <Illustration
             src="/images/exceed-career/line/line-career-map-phone.png"

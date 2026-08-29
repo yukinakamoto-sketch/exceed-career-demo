@@ -10,6 +10,7 @@ const experienceStages = [
     keyword: "基礎力が身につく",
     support:
       "コミュニケーション・顧客理解・PCスキル・業務遂行力・営業力・チームワーク・自分の適性を知る経験",
+    wide: true,
   },
   {
     keyword: "自分の適性が分かる",
@@ -78,7 +79,13 @@ export default function ExperienceSection() {
                 >
                   {stage.keyword}
                 </p>
-                <p className="text-[12.5px] leading-[1.8] text-text-sub md:max-w-[190px] md:mx-auto">
+                <p
+                  className={`text-[12.5px] text-text-sub mx-auto ${
+                    stage.wide
+                      ? "leading-[2.1] md:max-w-[240px] tracking-[0.01em]"
+                      : "leading-[1.8] md:max-w-[190px]"
+                  }`}
+                >
                   {stage.support}
                 </p>
               </Reveal>

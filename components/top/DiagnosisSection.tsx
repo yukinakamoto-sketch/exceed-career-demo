@@ -45,18 +45,13 @@ export default function DiagnosisSection() {
           </p>
 
           <div className="mb-6">
-            <div className="flex items-center flex-wrap gap-x-3 gap-y-1 text-[13px] font-semibold text-navy">
-              <span>思考・働き方・成長スタイル</span>
-              <span className="text-text-sub font-normal">×</span>
-              <span>本人が望む未来</span>
-            </div>
-
-            <div className="flex items-center gap-2 mt-3 mb-2 text-text-sub">
-              <span className="block h-[1px] w-8 bg-border" />
-              <span className="text-[11px]">から導かれる</span>
-            </div>
-
-            <p className="font-extrabold text-accent text-[19px] md:text-[22px] leading-[1.3]">
+            <p className="text-[13px] font-semibold text-text-sub mb-2">
+              思考・働き方・成長スタイル × 本人が望む未来から
+            </p>
+            <p
+              className="font-extrabold text-accent leading-[1.25]"
+              style={{ fontSize: "clamp(24px, 3.2vw, 36px)" }}
+            >
               おすすめキャリアマップ
             </p>
           </div>
