@@ -60,13 +60,13 @@ export default function RoadmapSection() {
               className="flex items-start flex-1 min-w-0"
             >
               <div className="min-w-0">
-                <div className="flex items-center gap-1.5">
-                  <span className="block w-[7px] h-[7px] rounded-full bg-accent-soft shrink-0" />
-                  <p className="top-label text-accent-soft whitespace-nowrap">
+                <p className="font-bold text-[14px] leading-[1.4]">{step.title}</p>
+                <div className="flex items-center gap-1.5 mt-1.5">
+                  <span className="block w-[6px] h-[6px] rounded-full bg-accent-soft shrink-0" />
+                  <p className="top-label text-white/40 whitespace-nowrap">
                     {i + 1}. {step.label}
                   </p>
                 </div>
-                <p className="mt-1 font-bold text-[13px] leading-[1.4]">{step.title}</p>
               </div>
               {i < roadmapSteps.length - 1 && (
                 <span className="text-white/30 text-[12px] mx-2 mt-[1px] shrink-0">
@@ -101,10 +101,10 @@ export default function RoadmapSection() {
             {roadmapSteps.map((step, i) => (
               <Reveal key={step.label} delay={i * 60} distance={10} className="relative">
                 <span className="absolute left-[-24px] top-[4px] w-[9px] h-[9px] rounded-full bg-accent-soft" />
-                <p className="top-label text-accent-soft mb-1">
+                <p className="font-bold text-[15px] leading-[1.5]">{step.title}</p>
+                <p className="top-label text-white/40 mt-1">
                   {i + 1}. {step.label}
                 </p>
-                <p className="font-bold text-[15px] leading-[1.5]">{step.title}</p>
               </Reveal>
             ))}
           </div>

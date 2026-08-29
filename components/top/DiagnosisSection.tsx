@@ -44,12 +44,21 @@ export default function DiagnosisSection() {
             どんな順番で進めばいい？
           </p>
 
-          <div className="flex flex-col gap-1.5 text-[13px] font-semibold text-navy mb-5">
-            <span>思考・働き方・成長スタイル</span>
-            <span className="text-text-sub">×</span>
-            <span>本人が望む未来</span>
-            <span className="text-text-sub">↓</span>
-            <span className="text-accent">おすすめキャリアマップ</span>
+          <div className="mb-6">
+            <div className="flex items-center flex-wrap gap-x-3 gap-y-1 text-[13px] font-semibold text-navy">
+              <span>思考・働き方・成長スタイル</span>
+              <span className="text-text-sub font-normal">×</span>
+              <span>本人が望む未来</span>
+            </div>
+
+            <div className="flex items-center gap-2 mt-3 mb-2 text-text-sub">
+              <span className="block h-[1px] w-8 bg-border" />
+              <span className="text-[11px]">から導かれる</span>
+            </div>
+
+            <p className="font-extrabold text-accent text-[19px] md:text-[22px] leading-[1.3]">
+              おすすめキャリアマップ
+            </p>
           </div>
 
           <p className="text-[14px] leading-[1.9] text-text-sub max-w-[440px] mb-2">

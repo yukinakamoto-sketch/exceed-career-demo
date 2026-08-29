@@ -9,7 +9,7 @@ export default function FutureSection() {
   const { future, setFuture } = useJourney();
 
   return (
-    <section id="career" className="bg-white py-12 md:py-14">
+    <section id="career" className="bg-white pt-7 pb-12 md:pt-8 md:pb-14">
       <div className="wrap">
         <div className="flex flex-col text-text-sub mb-3 leading-tight">
           <span className="top-label">03</span>

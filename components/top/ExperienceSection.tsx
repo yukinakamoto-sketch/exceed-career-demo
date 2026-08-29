@@ -1,14 +1,25 @@
 import Illustration from "./Illustration";
 import Reveal from "./Reveal";
 
-const foundationSkills = [
-  "コミュニケーション",
-  "顧客理解",
-  "PCスキル",
-  "業務遂行力",
-  "営業力",
-  "チームワーク",
-  "自分の適性を知る経験",
+const experienceStages = [
+  {
+    keyword: "現場経験",
+    support: "販売・営業・接客・事務など",
+  },
+  {
+    keyword: "基礎力が身につく",
+    support:
+      "コミュニケーション・顧客理解・PCスキル・業務遂行力・営業力・チームワーク・自分の適性を知る経験",
+  },
+  {
+    keyword: "自分の適性が分かる",
+    support: "得意なこと、向いていることに気づく",
+  },
+  {
+    keyword: "次のキャリアへつながる",
+    support: "選んだ方向へ、次の一歩を踏み出す",
+    accent: true,
+  },
 ];
 
 export default function ExperienceSection() {
@@ -24,65 +35,55 @@ export default function ExperienceSection() {
           積む
         </h2>
 
-        <p className="text-[15px] font-semibold text-navy leading-[1.8] mb-4">
-          なぜ、最初から希望職種ではないのか。
-        </p>
+        <div className="flex items-center gap-4 mb-4">
+          <div className="relative w-[44px] aspect-square shrink-0">
+            <Illustration
+              src="/images/exceed-career/career/career-people-hr.png"
+              alt="接客・販売・事務など現場で働く人のイラスト"
+              sizes="44px"
+            />
+          </div>
+          <p className="text-[15px] font-semibold text-navy leading-[1.8]">
+            なぜ、最初から希望職種ではないのか。
+          </p>
+        </div>
 
-        <p className="text-[14px] leading-[1.9] text-text-sub max-w-[560px] mb-10 md:mb-12">
+        <p className="text-[14px] leading-[1.9] text-text-sub max-w-[560px] mb-12 md:mb-14">
           販売、営業、接客、事務、顧客対応。多くの人が、最初は希望や関心とは違う仕事から
           キャリアをスタートしています。それは最終ゴールではなく、キャリア形成の入口です。
         </p>
 
-        <div className="flex flex-col md:flex-row md:items-stretch gap-6 md:gap-0">
-          <Reveal className="flex-1 flex flex-col items-start md:items-center text-left md:text-center">
-            <div className="relative w-[64px] aspect-square mb-3">
-              <Illustration
-                src="/images/exceed-career/career/career-people-hr.png"
-                alt="接客・販売・事務など現場で働く人のイラスト"
-                sizes="64px"
-              />
-            </div>
-            <p className="font-bold text-navy text-[14px] leading-[1.5] max-w-[220px]">
-              現場経験
-              <br />
-              販売・営業・接客・事務など
-            </p>
-          </Reveal>
+        <div className="relative">
+          <div className="hidden md:block absolute left-0 right-0 top-[5px] h-[1px] bg-border" />
+          <div className="md:hidden absolute left-[4px] top-[6px] bottom-[6px] w-[1px] bg-border" />
 
-          <div className="flex items-center justify-center px-4 py-2 md:py-0 text-text-sub text-[20px] shrink-0">
-            <span className="rotate-90 md:rotate-0 inline-block">→</span>
+          <div className="flex flex-col md:flex-row md:justify-between gap-8 md:gap-6">
+            {experienceStages.map((stage, i) => (
+              <Reveal
+                key={stage.keyword}
+                delay={i * 80}
+                distance={10}
+                className="relative pl-6 md:pl-0 md:flex-1 md:min-w-0 md:text-center"
+              >
+                <span
+                  className={`absolute left-0 top-[3px] w-[9px] h-[9px] rounded-full md:static md:inline-block md:mb-3 ${
+                    stage.accent ? "bg-accent" : "bg-navy"
+                  }`}
+                />
+                <p
+                  className={`font-extrabold leading-[1.3] mb-2 ${
+                    stage.accent ? "text-accent" : "text-navy"
+                  }`}
+                  style={{ fontSize: "clamp(19px, 2.1vw, 24px)" }}
+                >
+                  {stage.keyword}
+                </p>
+                <p className="text-[12.5px] leading-[1.8] text-text-sub md:max-w-[190px] md:mx-auto">
+                  {stage.support}
+                </p>
+              </Reveal>
+            ))}
           </div>
-
-          <Reveal delay={80} className="flex-[1.6] flex flex-col justify-center">
-            <p className="font-bold text-navy text-[14px] mb-3">基礎力が身につく</p>
-            <ul className="flex flex-wrap gap-x-5 gap-y-2">
-              {foundationSkills.map((skill) => (
-                <li key={skill} className="text-[13px] font-semibold text-text-sub">
-                  {skill}
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-
-          <div className="flex items-center justify-center px-4 py-2 md:py-0 text-text-sub text-[20px] shrink-0">
-            <span className="rotate-90 md:rotate-0 inline-block">→</span>
-          </div>
-
-          <Reveal delay={160} className="flex-1 flex flex-col items-start md:items-center text-left md:text-center justify-center">
-            <p className="font-bold text-navy text-[14px] leading-[1.6] max-w-[200px]">
-              自分の適性が分かる
-            </p>
-          </Reveal>
-
-          <div className="flex items-center justify-center px-4 py-2 md:py-0 text-text-sub text-[20px] shrink-0">
-            <span className="rotate-90 md:rotate-0 inline-block">→</span>
-          </div>
-
-          <Reveal delay={240} className="flex-1 flex flex-col items-start md:items-center text-left md:text-center justify-center">
-            <p className="font-bold text-accent text-[14px] leading-[1.6] max-w-[200px]">
-              次のキャリアへつながる
-            </p>
-          </Reveal>
         </div>
       </div>
     </section>

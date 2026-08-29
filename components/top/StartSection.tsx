@@ -15,7 +15,7 @@ const startLinks = [
 
 export default function StartSection() {
   return (
-    <section id="start" className="bg-white py-14 md:py-16">
+    <section id="start" className="bg-white py-12 md:py-14">
       <div className="wrap">
         <div className="flex flex-col text-text-sub mb-3 leading-tight">
           <span className="top-label">10</span>
@@ -26,25 +26,28 @@ export default function StartSection() {
           始める
         </h2>
 
-        <p className="text-[14px] leading-[1.9] text-text-sub max-w-[480px] mb-8 md:mb-10">
+        <p className="text-[14px] leading-[1.9] text-text-sub max-w-[480px] mb-6 md:mb-8">
           道が見えたら、最初の一歩を。今すぐ決めることも、
           じっくり考えることも、どちらも未来への行動の一つ。
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-[720px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:divide-x md:divide-border border-t border-border">
           {startLinks.map((link, i) => (
             <Reveal key={link.title} delay={i * 60} distance={12}>
               <a
                 href={link.href}
-                className="group block border-t border-border pt-5"
+                className="group block py-6 md:py-7 md:px-8 md:first:pl-0"
               >
-                <p className="font-bold text-navy text-[16px] leading-[1.5] mb-2 group-hover:text-accent transition-colors">
+                <p
+                  className="font-extrabold text-navy leading-[1.3] mb-3 group-hover:text-accent transition-colors"
+                  style={{ fontSize: "clamp(20px, 2.4vw, 28px)" }}
+                >
                   {link.title}
                 </p>
-                <p className="text-[13px] leading-[1.8] text-text-sub mb-3">
+                <p className="text-[13px] leading-[1.8] text-text-sub mb-4 max-w-[320px]">
                   {link.description}
                 </p>
-                <span className="underline-swipe inline-block text-[13px] font-semibold text-navy">
+                <span className="underline-swipe inline-block text-[14px] font-semibold text-navy">
                   見る{" "}
                   <span className="inline-block transition-transform duration-[250ms] group-hover:translate-x-[4px]">
                     →

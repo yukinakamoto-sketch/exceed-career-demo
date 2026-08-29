@@ -21,7 +21,7 @@ export default function CareerStorySection() {
         </p>
 
         <p
-          className="font-extrabold text-navy leading-[0.98] mb-6 md:mb-8 tracking-[-0.02em]"
+          className="font-extrabold text-navy leading-[0.98] mb-4 md:mb-5 tracking-[-0.02em]"
           style={{ fontSize: "clamp(25px, 4vw, 48px)" }}
         >
           {careerStory.subheadline[0]}
@@ -29,7 +29,7 @@ export default function CareerStorySection() {
           {careerStory.subheadline[1]}
         </p>
 
-        <div className="grid gap-6 md:grid-cols-[38%_1fr] md:gap-10 md:items-start">
+        <div className="grid gap-5 md:grid-cols-[38%_1fr] md:gap-6 md:items-start">
           <Reveal
             distance={12}
             className="relative w-[170px] md:w-[58%] mx-auto md:mx-0 md:ml-auto aspect-[1107/1376]"

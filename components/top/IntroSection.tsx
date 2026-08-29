@@ -36,7 +36,7 @@ export default function IntroSection() {
   const { current, setCurrent } = useJourney();
 
   return (
-    <section id="intro" className="bg-white py-14 md:py-16">
+    <section id="intro" className="bg-white pt-14 pb-8 md:pt-16 md:pb-9">
       <div className="wrap">
         <div className="flex flex-col text-text-sub mb-3 leading-tight">
           <span className="top-label">02</span>
@@ -78,7 +78,7 @@ export default function IntroSection() {
                   aria-pressed={selected}
                   className="group flex flex-col items-center text-center w-full"
                 >
-                  <div className="relative w-[56px] md:w-[64px] aspect-square mb-3 transition-transform duration-[250ms] ease-out group-hover:-translate-y-[3px]">
+                  <div className="relative w-[56px] md:w-[72px] aspect-square mb-3 transition-transform duration-[250ms] ease-out group-hover:-translate-y-[3px]">
                     <Illustration src={tag.image} alt="" sizes="64px" />
                   </div>
                   <span

@@ -8,7 +8,7 @@ export default function Hero() {
       className="relative flex min-h-[100svh] items-center overflow-hidden bg-warm-white"
     >
       <div className="wrap relative w-full pb-6 pt-[72px] md:pb-4 md:pt-[76px]">
-        <div className="relative grid gap-6 md:grid-cols-[58%_1fr] md:items-center md:gap-0">
+        <div className="relative grid gap-6 md:grid-cols-[58%_1fr] md:items-center md:gap-0 md:-translate-y-[7vh]">
           <div className="relative z-10 md:pl-2">
             <Reveal as="h1" delay={0} distance={18} className="font-extrabold text-navy" style={{
                 fontSize: "clamp(28px, 4.2vw, 68px)",
